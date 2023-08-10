@@ -54,8 +54,9 @@ header {
   margin-left: 0.5em;
 }
 
-img {
+.mosteiro {
   width: 100%;
+  aspect-ratio: 1293 / 985;
 }
 
 footer {
