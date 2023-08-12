@@ -59,6 +59,11 @@ header {
   aspect-ratio: 1293 / 985;
 }
 
+.challet {
+  width: 100%;
+  aspect-ratio: 2780 / 2420;
+}
+
 footer {
   height: 50vh;
 }
