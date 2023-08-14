@@ -67,3 +67,8 @@ header {
 footer {
   height: 50vh;
 }
+
+.signature mask {
+  stroke: black;
+  stroke-width: 10;
+}
