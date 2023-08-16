@@ -67,3 +67,7 @@ header {
 footer {
   height: 50vh;
 }
+
+.hidden {
+  opacity: 0;
+}

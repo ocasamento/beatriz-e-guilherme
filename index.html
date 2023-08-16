@@ -85,6 +85,7 @@
   </footer>
   <script>
     const masks = document.querySelectorAll('.signature mask path');
+    const weddingDate = document.querySelector('.date');
     const pathLengths = [];
     masks.forEach((mask) => {
       const pathLength = mask.getTotalLength();
@@ -92,6 +93,7 @@
       mask.style.strokeDashoffset = pathLength;
       mask.style.strokeDasharray = `${pathLength} ${pathLength}`;
     });
+    weddingDate.classList.add('hidden');
     window.onload = () => {
       let delay = 0;
       masks.forEach((mask, i) => {
@@ -103,6 +105,10 @@
         mask.style.strokeDashoffset = 0;
         delay = delay + duration;
       });
+      weddingDate.style['transition-property'] = 'opacity';
+      weddingDate.style['transition-duration'] = '2s';
+      weddingDate.style.transitionDelay = `${delay}s`;
+      weddingDate.classList.remove('hidden');
     };
   </script>
   </body>
