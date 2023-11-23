@@ -67,18 +67,3 @@ header {
 footer {
   height: 50vh;
 }
-
-.signature, .date {
-  opacity: 0;
-  animation: 2s forwards fadein;
-}
-
-.date {
-  animation-delay: 1.5s;
-}
-
-@keyframes fadein {
-  to {
-    opacity: 1;
-  }
-}
