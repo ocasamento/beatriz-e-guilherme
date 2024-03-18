@@ -20,9 +20,40 @@
 }
 
 body {
-  font-size: clamp(1rem, calc(0.7rem + 2.5vw), 2.5rem);
+  font-size: clamp(0.8rem, calc(0.5rem + 1.2vw), 2.5rem);
   font-family: 'Libre Baskerville', serif;
-  margin: 0 max(5vw, calc(12em - 300px));
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: normal;
+  margin: 0;
+}
+
+a,
+a:visited {
+  color: currentColor;
+}
+
+a {
+  text-decoration-color: var(--link-text-color);
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: from-font;
+}
+
+@media (hover: hover) {
+  a:hover,
+  a:focus {
+    color: var(--link-text-hover-color);
+  }
+
+  a:hover {
+    text-decoration-style: solid;
+    text-decoration-color: var(--link-text-hover-color);
+  }
 }
 
 header {
@@ -33,6 +64,19 @@ header {
   justify-content: center;
 }
 
+.ceremony {
+  transform: translate(0, -25%);
+}
+
+main {
+  text-align: center;
+}
+
+.signature {
+  aspect-ratio: 860 / 140;
+  margin: 0 max(5vw, calc(16em - 300px));
+}
+
 .separator {
   margin: 0 1em;
 }
@@ -41,12 +85,7 @@ header {
   margin-top: 2em;
 }
 
-.where {
-  text-align: center;
-}
-
-.deemph {
-  font-size: 0.6em;
+.emph {
   font-style: italic;
 }
 
@@ -55,15 +94,74 @@ header {
 }
 
 .mosteiro {
-  width: 100%;
-  aspect-ratio: 1260 / 900;
+  display: inline-block;
+  max-width: 100%;
+  max-height: 80vh;
+  aspect-ratio: 3200 / 2000;
+}
+
+.address {
+  margin-top: 2vh;
+}
+
+.map {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 80vh;
+  aspect-ratio: 1450 / 2100;
+}
+
+.reception {
+  margin-top: 10vh;
 }
 
 .challet {
-  width: 100%;
-  aspect-ratio: 2780 / 2420;
+  display: inline-block;
+  margin-top: 5vh;
+  max-width: 100%;
+  max-height: 70vh;
+  aspect-ratio: 2140 / 1300;
+}
+
+.rsvp {
+  margin-top: 10vh;
+}
+
+.suggestions {
+  margin: 10vh auto 0 auto;
+  max-width: 30em;
+  text-align: left;
+}
+
+.suggestions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+@media (min-width: 850px) {
+  .contacts {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.bride {
+  text-align: left;
+}
+
+.groom {
+  text-align: right;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.iban {
+  white-space: nowrap;
 }
 
 footer {
   height: 50vh;
+  margin-top: 10vh;
 }
