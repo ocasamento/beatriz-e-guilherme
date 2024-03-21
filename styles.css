@@ -26,10 +26,13 @@ body {
   text-size-adjust: none;
 }
 
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
 h2 {
   font-size: 1.6em;
   font-weight: normal;
-  margin: 0;
 }
 
 a,
@@ -64,12 +67,12 @@ header {
   justify-content: center;
 }
 
-.ceremony {
-  transform: translate(0, -25%);
-}
-
 main {
   text-align: center;
+}
+
+section {
+  margin-top: 8svh;
 }
 
 .signature {
@@ -94,6 +97,10 @@ main {
   margin-left: 0.5em;
 }
 
+.ceremony {
+  margin-top: -20svh;
+}
+
 .mosteiro {
   display: inline-block;
   max-width: 100%;
@@ -101,19 +108,8 @@ main {
   aspect-ratio: 3200 / 2000;
 }
 
-.address {
+.ceremony h2 {
   margin-top: 2svh;
-}
-
-.map {
-  display: inline-block;
-  max-width: 100%;
-  max-height: 80svh;
-  aspect-ratio: 1450 / 2100;
-}
-
-.reception {
-  margin-top: 10svh;
 }
 
 .challet {
@@ -124,19 +120,30 @@ main {
   aspect-ratio: 2140 / 1300;
 }
 
-.rsvp {
-  margin-top: 10svh;
-}
-
 .suggestions {
-  margin: 10vh auto 0 auto;
-  max-width: 30em;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 25em;
   text-align: left;
 }
 
-.suggestions ul {
+.suggestion {
+  margin-top: 8svh;
+  border-left: 1px solid black;
+  padding-left: 1em;
+}
+
+.suggestion ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+}
+
+.map {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 80svh;
+  aspect-ratio: 1450 / 2100;
 }
 
 @media (min-width: 850px) {
@@ -154,15 +161,10 @@ main {
   text-align: right;
 }
 
-.title {
-  font-weight: bold;
-}
-
 .iban {
   white-space: nowrap;
 }
 
 footer {
-  height: 50svh;
-  margin-top: 10svh;
+  padding-bottom: 60svh;
 }
