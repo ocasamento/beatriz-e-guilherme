@@ -138,6 +138,7 @@ section {
   margin-top: 8svh;
   border-left: 1px solid black;
   padding-left: 1em;
+  /* background: repeat-y url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjIwIj4KICA8cGF0aCBkPSJNMiAwYzIgNCAyIDYgMCAxMHMtMiA2IDAgMTAiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLXdpZHRoOjE7c3Ryb2tlLWxpbmVjYXA6cm91bmQiLz4KPC9zdmc+Cg==);  */
 }
 
 .suggestion ul {
