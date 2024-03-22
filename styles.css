@@ -47,6 +47,12 @@ a {
   text-decoration-thickness: from-font;
 }
 
+@media (hover: none) {
+  img {
+    pointer-events: none;
+  }
+}
+
 @media (hover: hover) {
   a:hover,
   a:focus {
