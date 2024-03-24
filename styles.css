@@ -165,19 +165,29 @@ section {
   pointer-events: none;
 }
 
-@media (min-width: 850px) {
-  .contacts {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
-.bride {
+.contacts {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 18em;
   text-align: left;
+  margin-top: 10svh;
 }
 
 .groom {
-  text-align: right;
+  margin-top: 5svh;
+}
+
+@media (min-width: 750px) {
+  .contacts {
+    display: flex;
+    justify-content: space-around;
+    max-width: none;
+  }
+
+  .groom {
+    text-align: right;
+    margin-top: 0;
+  }
 }
 
 .nowrap {
