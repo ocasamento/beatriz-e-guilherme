@@ -68,9 +68,12 @@
       <svg class="map-overlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 2100">
         <defs>
           <path id="park" d="M1 1h0v47.6h7.2v-21.6h9.8a1 1 0 00-0-26zm7 19v-11.9h10a1 1 0 010 11.9zm40.8 17c-.2-.5-.7-1-.7-1l-2.4-6.3c-.5-1-1.5-1.7-2.6-1.8h-12.4c-.6 0-2 .6-2.6 1.8l-2.3 6.4s-.6.4-.8.9c-.2.4-.5.8-.5 3.6 0 2.7.6 3.7 1.3 4l.5.3v2.6c0 .8.2 1 1 1h1.7c.8 0 1.3 0 1.3-.8v-2.5h13.2v2.5c0 .8.5.8 1.3.8h1.8c.8 0 1-.2 1-1v-2.6l.5-.3c.7-.3 1.2-1.3 1.2-4 0-2.8-.3-3.2-.5-3.6zm-20.8-1.4 1.2-4.6c.2-.4 1-1.5 2-1.4h11.6c1 0 1.9 1 2 1.4.3 1.1 1 4.3 1.2 4.6.1.5-.3.5-.3.5h-17.4s-.5 0-.4-.5zm1.3 6.3a1.5 1.5 0 01-1.5-1.6c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5c0 .9-.7 1.6-1.5 1.6zm15.5 0a1.6 1.6 0 01-1.5-1.6c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5c0 .9-.6 1.6-1.5 1.6z"/>
-          <path id="line" d="M545 375s88 371 82 409c-11 61-188 313-181 334 11 34 342 249 385 290 58 55 272 220 308 253 12 47 20 176 20 176"/>
+          <path id="line" d="M554 370s88 371 82 409c-11 61-188 313-181 334 12 22 359 256 402 297 62 47 266 222 302 255 12 47 9 167 9 167"/>
+          <mask id="animated-line-mask" class="line">
+            <use xlink:href="#line"/>
+          </mask>
         </defs>
-        <use href="#line" id="animated-line" style="fill:none;stroke:#000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round"/>
+        <use href="#line" mask="url(#animated-line-mask)" id="animated-line" class="line"/>
         <use href="#park" class="park" x="700" y="601"/>
         <use href="#park" class="park" x="1325" y="1780"/>
       </svg>
@@ -97,5 +100,60 @@
     </section>
   </main>
   <footer></footer>
+  <script type="text/javascript">
+    var line = document.querySelector('#line');
+    var animatedLine = document.querySelector('#animated-line');
+    var animatedLineMask = document.querySelector('#animated-line-mask use');
+    var mapContainer = document.querySelector('.map-container');
+    var map = document.querySelector('.map');
+
+    var ticking = false;
+    var startBound;
+    var animationHeight;
+    var pathLength = line.getTotalLength();
+    var numDashes = 30;
+
+    animatedLine.style.strokeDasharray = pathLength / (numDashes * 2 - 1);
+    animatedLineMask.style.strokeDashoffset = pathLength;
+    animatedLineMask.style.strokeDasharray = pathLength;
+
+    map.addEventListener('load', onMapLoad);
+    window.addEventListener('resize', onResize, { passive: true });
+
+    function onResize() {
+      calculateBounds();
+      onScroll();
+    }
+
+    function onMapLoad() {
+      calculateBounds();
+      onScroll();
+      document.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    function calculateBounds() {
+      var mapHeight = mapContainer.offsetHeight;
+      animationHeight = mapHeight * 0.8;
+      startBound = mapContainer.offsetTop - window.innerHeight + mapHeight * 0.4;
+    }
+
+    function onScroll(event) {
+      if (!ticking) {
+        ticking = true;
+
+        var scrollPos = window.scrollY;
+        window.requestAnimationFrame(() => {
+          drawMapPath(scrollPos);
+          ticking = false;
+        });
+      }
+    }
+
+    function drawMapPath(scrollPos) {
+      var scrollPercentage = (scrollPos - startBound) / animationHeight;
+      var drawLength = pathLength * (1 - scrollPercentage);
+      animatedLineMask.style.strokeDashoffset = Math.min(Math.max(drawLength, 0), pathLength);
+    }
+  </script>
 </body>
 </html>

@@ -111,7 +111,7 @@ section {
 .mosteiro {
   display: inline-block;
   max-width: 100%;
-  max-height: 80svh;
+  max-height: 90svh;
   aspect-ratio: 3200 / 2000;
 }
 
@@ -154,7 +154,7 @@ section {
 .map {
   display: inline-block;
   max-width: 100%;
-  max-height: 80svh;
+  max-height: 90svh;
   aspect-ratio: 1450 / 2100;
 }
 
@@ -163,6 +163,28 @@ section {
   top: 0;
   left: 0;
   pointer-events: none;
+  user-select: none;
+}
+
+#animated-line, .park {
+  stroke: black;
+}
+
+#animated-line-mask {
+  stroke: white;
+}
+
+.line {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (orientation: landscape) {
+  .map {
+    max-height: 140svh;
+  }
 }
 
 .contacts {
