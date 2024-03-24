@@ -50,6 +50,7 @@ a {
 @media (hover: none) {
   img {
     pointer-events: none;
+    user-select: none;
   }
 }
 
