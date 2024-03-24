@@ -179,7 +179,7 @@ section {
   text-align: right;
 }
 
-.iban {
+.nowrap {
   white-space: nowrap;
 }
 
