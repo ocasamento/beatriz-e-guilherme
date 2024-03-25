@@ -166,8 +166,14 @@ section {
   user-select: none;
 }
 
-#animated-line, .park {
-  stroke: black;
+#animated-line {
+  stroke: currentColor;
+  fill: none;
+}
+
+.park {
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 #animated-line-mask {
