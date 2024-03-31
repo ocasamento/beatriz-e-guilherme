@@ -177,6 +177,13 @@ section {
   fill: currentColor;
 }
 
+text {
+  font-size: 30px;
+  font-weight: bold;
+  fill: currentColor;
+  stroke: none;
+}
+
 #animated-line-mask {
   stroke: white;
 }
