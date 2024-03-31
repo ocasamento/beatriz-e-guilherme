@@ -118,7 +118,11 @@
     animatedLineMask.style.strokeDashoffset = pathLength;
     animatedLineMask.style.strokeDasharray = pathLength;
 
-    map.addEventListener('load', onMapLoad);
+    if (map.complete) {
+      onMapLoad(map);
+    } else {
+      map.addEventListener('load', onMapLoad);
+    }
     window.addEventListener('resize', onResize, { passive: true });
 
     function onResize() {
