@@ -165,6 +165,7 @@ section {
   left: 0;
   pointer-events: none;
   user-select: none;
+  color: #2f2f2f;
 }
 
 #animated-line {
@@ -184,15 +185,16 @@ text {
   stroke: none;
 }
 
-#animated-line-mask {
-  stroke: white;
-}
-
 .line {
   fill: none;
-  stroke-width: 8;
+  stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+#animated-line-mask {
+  stroke: white;
+  stroke-width: 8;
 }
 
 @media (orientation: landscape) {
