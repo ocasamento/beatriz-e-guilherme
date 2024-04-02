@@ -203,12 +203,16 @@ text {
   }
 }
 
+.rsvp {
+  margin-top: 16svh;
+}
+
 .contacts {
+  margin-top: 16svh;
   margin-right: auto;
   margin-left: auto;
   max-width: 18em;
   text-align: left;
-  margin-top: 10svh;
 }
 
 .groom {
@@ -233,5 +237,5 @@ text {
 }
 
 footer {
-  padding-bottom: 60svh;
+  padding-bottom: 40svh;
 }
