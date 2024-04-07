@@ -24,6 +24,7 @@ body {
   font-family: 'Libre Baskerville', serif;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  background-image: url('./noisy-texture.png');
 }
 
 h1, h2, h3, h4, p {
