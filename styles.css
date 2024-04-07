@@ -160,6 +160,12 @@ section {
   aspect-ratio: 1450 / 2100;
 }
 
+@media (orientation: landscape) {
+  .map {
+    max-height: 140svh;
+  }
+}
+
 .map-overlay {
   position: absolute;
   top: 0;
@@ -196,12 +202,6 @@ text {
 #animated-line-mask {
   stroke: white;
   stroke-width: 8;
-}
-
-@media (orientation: landscape) {
-  .map {
-    max-height: 140svh;
-  }
 }
 
 .rsvp {
