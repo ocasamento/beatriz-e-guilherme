@@ -240,3 +240,7 @@ text {
 footer {
   padding-bottom: 40svh;
 }
+
+img {
+  pointer-events: none;
+}
